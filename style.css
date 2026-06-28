@@ -165,4 +165,8 @@ footer {
         border-radius: 24px;            /* Adiciona o efeito de bordas arredondadas no cartão branco */
         padding: 40px;                  /* Aumenta o espaçamento interno no desktop para o texto "respirar" melhor */
     }
+    img {
+        border-radius: 12px; /* Deixa a imagem com as bordas arredondadas no PC */
+        margin-top: 0; 
+    }
 }
