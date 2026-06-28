@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: "Outfit";
+    src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format('truetype');
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: "young serif";
+    src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+
+
+:root {
+    --White: hsl(0, 0%, 100%);
+
+    --Stone-100: hsl(30, 54%, 90%);
+    --Stone-150: hsl(30, 18%, 87%);
+    --Stone-600: hsl(30, 10%, 34%);
+    --Stone-900: hsl(24, 5%, 18%);
+
+    --Brown-800: hsl(14, 45%, 36%);
+
+    --Rose-800: hsl(332, 51%, 32%);
+    --Rose-50: hsl(330, 100%, 98%);
+
+    --fonte-padrao: Arial, verdana, helvetica, sans-serif;
+    --fonte-outfit: 'Outfit', sans-serif;
+    --fonte-young: 'young serif', serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+img {
+    max-width: 100%;    /* Garante que a imagem nunca fique maior que a largura do main */
+    height: auto;       /* Mantém a proporção correta da altura para a foto não achatar */
+    display: block;     /* Remove um mini espaço em branco padrão que fica embaixo de imagens */
+    border-radius: 12px;/* Deixa os quatro cantos da imagem levemente arredondados */ 
+    margin-bottom: 5px; /* Cria um espaço de 5 pixels abaixo da imagem para afastar o h1 */
+}
+
+/* ==========================================
+   4. BASE DO MOBILE FIRST (CELULAR - PADRÃO 375px)
+   ========================================== */
+body {
+    background-color: var(--Stone-100); /* Define a cor de fundo bege claro na página inteira */
+    font-family: var(--fonte-outfit);   /* Aplica a fonte Outfit como a padrão do site */
+    display: flex;                      /* Ativa o Flexbox no corpo da página */
+    flex-direction: column;             /* Empilha os elementos (main e footer) um embaixo do outro */
+    align-items: center;                /* Centraliza o cartão branco horizontalmente na tela */
+    justify-content: flex-start;        /* Alinha o conteúdo a partir do topo da tela */
+    min-height: 100vh;                  /* Obriga o body a ter, no mínimo, a altura total da tela */
+}
+
+main {
+    background-color: var(--White);     /* Define o fundo do cartão como branco */
+    width: 100%;                        /* No celular, o cartão ocupa toda a largura da tela */
+    max-width: 736px;                   /* Define o limite máximo que o cartão pode expandir */
+    display: flex;                      /* Ativa o Flexbox para organizar o conteúdo de dentro do main */
+    flex-direction: column;             /* Empilha imagem, h1, h2, p, tabela um abaixo do outro */
+    justify-content: center;            /* Alinha os itens flexíveis ao centro do eixo principal */
+    overflow: hidden;                   /* Esconde qualquer conteúdo que por acaso tente passar do limite do main */
+    line-height: 1.6;                   /* Define o espaçamento entre as linhas de texto para facilitar a leitura */
+    padding: 24px;                      /* Adiciona um espaço de 24 pixels nas bordas internas do cartão */
+}
+
+h1 {
+    font-family: var(--fonte-young);    /* Aplica a fonte Young Serif com serifa no título principal */
+    color: var(--Stone-900);            /* Aplica a cor cinza quase preta no texto do título */
+    margin-top: 15px;                   /* Adiciona 15 pixels de espaço acima do título */
+    margin-bottom: 15px;                /* Adiciona 15 pixels de espaço abaixo do título */
+}
+
+h2 {
+    font-family: var(--fonte-young);    /* Aplica a fonte Young Serif nos subtítulos da receita */
+    color: var(--Brown-800);            /* Aplica a cor marrom nos subtítulos (Ingredients, Nutrition, etc) */
+    margin-top: 20px;                   /* Adiciona 20 pixels de espaço acima do h2 */
+    margin-bottom: 10px;                /* Adiciona 10 pixels de espaço abaixo do h2 */
+    font-size: 1.5rem;                  /* Define o tamanho do texto baseado na proporção padrão */
+}
+
+p {
+    font-family: var(--fonte-outfit);   /* Garante que os parágrafos usem a fonte Outfit sem serifa */
+    color: var(--Stone-600);            /* Aplica a cor cinza intermediária para suavizar os textos */
+}
+
+footer {
+    font: normal 1em var(--fonte-outfit);/* Define estilo normal, tamanho padrão e a fonte Outfit */
+    text-align: center;                  /* Centraliza o texto dos créditos na horizontal */
+    padding: 20px 0;                     /* Cria um espaçamento de 20 pixels acima e abaixo do rodapé */
+}
+
+/* ==========================================
+   5. SEÇÃO DA TABELA DE NUTRIÇÃO (CORRIGIDA)
+   ========================================== */
+
+.nutritional-text {
+    margin-bottom: 16px;                /* Adiciona 16 pixels de espaço entre o parágrafo e a tabela */
+    color: var(--Stone-600);            /* Aplica a cor cinza padrão nos parágrafos informativos */
+}
+
+.nutrition-table {
+    width: 100%;                        /* Faz a tabela ocupar toda a largura interna do cartão */
+    border-collapse: collapse;          /* Junta as bordas das linhas fazendo divisórias finas e únicas */
+    margin-bottom: 24px;                /* Cria um espaço de 24 pixels abaixo da tabela inteira */
+}
+
+/* Formatação das Linhas da Tabela */
+.nutrition-table tr {
+    border-bottom: 1px solid var(--Stone-150); /* Adiciona a linha divisória cinza claro sob cada linha */
+}
+
+/* Remove a linha divisória da última linha */
+.nutrition-table tr:last-child {
+    border-bottom: none;                /* Remove a linha de baixo da última linha (Fat) para o design ficar limpo */
+}
+
+/* Formatação das Células (Espaçamento interno) */
+.nutrition-table td {
+    padding: 12px 16px;                 /* Cria um respiro interno de 12px vertical e 16px horizontal */
+    width: 50%;                         /* Garante que o rótulo e o valor dividam a tabela exatamente ao meio */
+}
+
+/* Estilo do nome do nutriente (lado esquerdo) */
+.nutrition-label {
+    color: var(--Stone-600);            /* Deixa os nomes dos nutrientes em cinza escuro */
+    font-weight: 400;                   /* Mantém o peso da fonte normal, sem negrito */
+}
+
+/* Estilo do valor do nutriente (lado direito) */
+.nutrition-value {
+    color: var(--Brown-800);            /* Coloca os valores numéricos em destaque com a cor marrom */
+    font-weight: 700;                   /* Aplica negrito forte para destacar os números da tabela */
+}
+
+/* ==========================================
+   6. RESPONSIVIDADE (DESKTOP - PADRÃO 1440px)
+   ========================================== */
+@media (min-width: 768px) {
+    body {
+        justify-content: center;        /* Em telas grandes, centraliza o cartão também na vertical */
+        padding: 40px 20px;             /* Cria margem fora do card para ele não colar nas bordas do monitor */
+    }
+
+    main {
+        max-width: 736px;               /* Garante que no computador o cartão trave na largura ideal de 736px */
+        border-radius: 24px;            /* Adiciona o efeito de bordas arredondadas no cartão branco */
+        padding: 40px;                  /* Aumenta o espaçamento interno no desktop para o texto "respirar" melhor */
+    }
+}
