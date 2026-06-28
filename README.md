@@ -26,7 +26,7 @@ The challenge was to build a responsive recipe page using semantic HTML and CSS,
 ### Links
 
 - Solution URL: [https://github.com/anthonyfelipe24/Anthonyfelipe24](https://github.com/anthonyfelipe24/Anthonyfelipe24)
-- Live Site URL: [https://anthonyfelipe24.github.io/Anthonyfelipe24](https://anthonyfelipe24.github.io/Anthonyfelipe24) 
+- Live Site URL: [https://anthonyfelipe24.github.io/Anthonyfelipe24](https://anthonyfelipe24.github.io/recipe-page-frontend-mentor/) 
 
 ## My process
 
